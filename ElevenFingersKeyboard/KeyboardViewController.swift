@@ -11,23 +11,38 @@ final class KeyboardViewController: UIInputViewController {
     private lazy var bottomBar = BottomBarView()
     private lazy var footerBar = FooterBarView()
     private lazy var textModeView = SpacebarSliderView()
+    private lazy var toastLabel = UILabel()
 
     private var isTextMode = false
-    private var submissionSpinner: UIActivityIndicatorView?
     private var submissionTimeout: Timer?
     private var pendingInsert = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.systemGroupedBackground
+        view.backgroundColor = UIColor.secondarySystemBackground
         view.translatesAutoresizingMaskIntoConstraints = false
 
         buildLayout()
         hookActions()
         observeBridge()
+    }
 
-        preferredContentSize = CGSize(width: 620, height: 360)
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        adaptForContainerSize()
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { _ in
+            self.adaptForContainerSize()
+        })
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        adaptForContainerSize()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -43,8 +58,13 @@ final class KeyboardViewController: UIInputViewController {
     }
 
     // MARK: Layout
+    private var topRow = UIView()
+    private var canvasContainer = UIView()
+    private var topRowHeight: NSLayoutConstraint!
+    private var bottomBarHeight: NSLayoutConstraint!
+    private var footerBarHeight: NSLayoutConstraint!
+
     private func buildLayout() {
-        let topRow = UIView()
         topRow.translatesAutoresizingMaskIntoConstraints = false
 
         let recordButton = bottomBar.recordButton
@@ -59,23 +79,20 @@ final class KeyboardViewController: UIInputViewController {
         topRow.addSubview(deleteAudioButton)
 
         NSLayoutConstraint.activate([
-            recordButton.leadingAnchor.constraint(equalTo: topRow.leadingAnchor, constant: 12),
+            recordButton.leadingAnchor.constraint(equalTo: topRow.leadingAnchor, constant: 8),
             recordButton.centerYAnchor.constraint(equalTo: topRow.centerYAnchor),
-            recordButton.widthAnchor.constraint(equalToConstant: 72),
-            recordButton.heightAnchor.constraint(equalToConstant: 32),
+            recordButton.widthAnchor.constraint(equalToConstant: 64),
 
-            waveformView.leadingAnchor.constraint(equalTo: recordButton.trailingAnchor, constant: 12),
-            waveformView.trailingAnchor.constraint(equalTo: deleteAudioButton.leadingAnchor, constant: -12),
-            waveformView.centerYAnchor.constraint(equalTo: topRow.centerYAnchor),
-            waveformView.heightAnchor.constraint(equalToConstant: 28),
+            waveformView.leadingAnchor.constraint(equalTo: recordButton.trailingAnchor, constant: 8),
+            waveformView.trailingAnchor.constraint(equalTo: deleteAudioButton.leadingAnchor, constant: -8),
+            waveformView.topAnchor.constraint(equalTo: topRow.topAnchor, constant: 4),
+            waveformView.bottomAnchor.constraint(equalTo: topRow.bottomAnchor, constant: -4),
 
-            deleteAudioButton.trailingAnchor.constraint(equalTo: topRow.trailingAnchor, constant: -12),
+            deleteAudioButton.trailingAnchor.constraint(equalTo: topRow.trailingAnchor, constant: -8),
             deleteAudioButton.centerYAnchor.constraint(equalTo: topRow.centerYAnchor),
-            deleteAudioButton.widthAnchor.constraint(equalToConstant: 32),
-            deleteAudioButton.heightAnchor.constraint(equalToConstant: 32),
+            deleteAudioButton.widthAnchor.constraint(equalToConstant: 28),
         ])
 
-        let canvasContainer = UIView()
         canvasContainer.translatesAutoresizingMaskIntoConstraints = false
         canvasHost.translatesAutoresizingMaskIntoConstraints = false
         canvasContainer.addSubview(canvasHost)
@@ -86,8 +103,8 @@ final class KeyboardViewController: UIInputViewController {
 
         NSLayoutConstraint.activate([
             canvasHost.topAnchor.constraint(equalTo: canvasContainer.topAnchor),
-            canvasHost.leadingAnchor.constraint(equalTo: canvasContainer.leadingAnchor),
-            canvasHost.trailingAnchor.constraint(equalTo: canvasContainer.trailingAnchor),
+            canvasHost.leadingAnchor.constraint(equalTo: canvasContainer.leadingAnchor, constant: 6),
+            canvasHost.trailingAnchor.constraint(equalTo: canvasContainer.trailingAnchor, constant: -6),
             canvasHost.bottomAnchor.constraint(equalTo: canvasContainer.bottomAnchor),
 
             textModeView.topAnchor.constraint(equalTo: canvasContainer.topAnchor),
@@ -103,21 +120,60 @@ final class KeyboardViewController: UIInputViewController {
             footerBar,
         ])
         stack.axis = .vertical
-        stack.spacing = 4
+        stack.spacing = 2
         stack.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stack)
+
+        topRowHeight = topRow.heightAnchor.constraint(equalToConstant: 36)
+        bottomBarHeight = bottomBar.heightAnchor.constraint(equalToConstant: 38)
+        footerBarHeight = footerBar.heightAnchor.constraint(equalToConstant: 30)
 
         NSLayoutConstraint.activate([
             stack.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             stack.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            stack.topAnchor.constraint(equalTo: view.topAnchor),
-            stack.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            stack.topAnchor.constraint(equalTo: view.topAnchor, constant: 2),
+            stack.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -2),
 
-            topRow.heightAnchor.constraint(equalToConstant: 44),
-            canvasContainer.heightAnchor.constraint(greaterThanOrEqualToConstant: 200),
-            bottomBar.heightAnchor.constraint(equalToConstant: 44),
-            footerBar.heightAnchor.constraint(equalToConstant: 36),
+            topRowHeight,
+            bottomBarHeight,
+            footerBarHeight,
         ])
+
+        toastLabel.translatesAutoresizingMaskIntoConstraints = false
+        toastLabel.font = .systemFont(ofSize: 12, weight: .medium)
+        toastLabel.textColor = .white
+        toastLabel.textAlignment = .center
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.78)
+        toastLabel.layer.cornerRadius = 10
+        toastLabel.clipsToBounds = true
+        toastLabel.alpha = 0
+        toastLabel.numberOfLines = 2
+        view.addSubview(toastLabel)
+        NSLayoutConstraint.activate([
+            toastLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            toastLabel.bottomAnchor.constraint(equalTo: bottomBar.topAnchor, constant: -4),
+            toastLabel.widthAnchor.constraint(lessThanOrEqualTo: view.widthAnchor, multiplier: 0.85),
+            toastLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 26),
+        ])
+    }
+
+    private func adaptForContainerSize() {
+        let h = view.bounds.height
+        guard h > 0 else { return }
+        // Scale chrome based on available height. Floating kb is ~320 tall; docked is larger.
+        if h < 260 {
+            topRowHeight.constant = 30
+            bottomBarHeight.constant = 34
+            footerBarHeight.constant = 26
+        } else if h < 340 {
+            topRowHeight.constant = 34
+            bottomBarHeight.constant = 36
+            footerBarHeight.constant = 28
+        } else {
+            topRowHeight.constant = 40
+            bottomBarHeight.constant = 42
+            footerBarHeight.constant = 32
+        }
     }
 
     // MARK: Actions
@@ -133,7 +189,7 @@ final class KeyboardViewController: UIInputViewController {
         bottomBar.onSubmit = { [weak self] in self?.submit() }
 
         bottomBar.onToggleRecord = { [weak self] in self?.toggleRecord() }
-        bottomBar.onDeleteAudio = { [weak self] in self?.confirmDeleteAudio() }
+        bottomBar.onDeleteAudio = { [weak self] in self?.deleteAudio() }
 
         footerBar.onCloseKeyboard = { [weak self] in self?.dismissKeyboard() }
         footerBar.onToggleTextMode = { [weak self] in self?.toggleTextMode() }
@@ -179,25 +235,18 @@ final class KeyboardViewController: UIInputViewController {
         }
     }
 
-    private func confirmDeleteAudio() {
-        let alert = UIAlertController(
-            title: "Delete audio?",
-            message: "The current recording will be discarded.",
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
-            self?.bridge.post(.recordingStop)
-            try? FileManager.default.removeItem(at: SharedPaths.currentAudio)
-            self?.bottomBar.setRecording(false)
-        })
-        presentInputAlert(alert)
+    private func deleteAudio() {
+        bridge.post(.recordingStop)
+        try? FileManager.default.removeItem(at: SharedPaths.currentAudio)
+        bottomBar.setRecording(false)
+        showToast("Audio cleared")
     }
 
     private func copyCanvasAsImage() {
         let image = canvasHost.renderImage(scale: 2.0)
         if let png = image.pngData() {
             UIPasteboard.general.setData(png, forPasteboardType: "public.png")
+            showToast("Canvas copied")
         }
     }
 
@@ -209,9 +258,11 @@ final class KeyboardViewController: UIInputViewController {
     }
 
     private func submit() {
-        let image = canvasHost.renderImage(scale: 2.0)
-        if canvasHost.hasStrokes, let png = image.pngData() {
-            try? png.write(to: SharedPaths.canvasImage, options: .atomic)
+        if canvasHost.hasStrokes {
+            let image = canvasHost.renderImage(scale: 2.0)
+            if let png = image.pngData() {
+                try? png.write(to: SharedPaths.canvasImage, options: .atomic)
+            }
         } else {
             try? FileManager.default.removeItem(at: SharedPaths.canvasImage)
         }
@@ -224,7 +275,7 @@ final class KeyboardViewController: UIInputViewController {
     private func startSubmissionTimeout() {
         submissionTimeout?.invalidate()
         submissionTimeout = Timer.scheduledTimer(withTimeInterval: 30, repeats: false) { [weak self] _ in
-            DispatchQueue.main.async { self?.showWakeCTA() }
+            DispatchQueue.main.async { self?.handleTimeout() }
         }
     }
 
@@ -246,29 +297,21 @@ final class KeyboardViewController: UIInputViewController {
         submissionTimeout?.invalidate()
         bottomBar.setSubmitting(false)
         let env = PipelineErrorEnvelope.read()
-        let message = env?.message ?? "Submission failed"
-        let alert = UIAlertController(title: "ElevenFingers", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        presentInputAlert(alert)
+        showToast(env?.message ?? "Submission failed")
     }
 
-    private func showWakeCTA() {
+    private func handleTimeout() {
         bottomBar.setSubmitting(false)
-        let alert = UIAlertController(
-            title: "Open ElevenFingers",
-            message: "The app is asleep. Tap to wake it and complete the submission.",
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Open", style: .default) { [weak self] _ in
-            if let url = URL(string: "elevenfingers://wake?pending=submit") {
-                self?.extensionContext?.open(url, completionHandler: nil)
-            }
-        })
-        presentInputAlert(alert)
+        showToast("Open ElevenFingers to finish — tap")
     }
 
-    private func presentInputAlert(_ alert: UIAlertController) {
-        present(alert, animated: true)
+    private func showToast(_ message: String) {
+        toastLabel.text = "  \(message)  "
+        view.bringSubviewToFront(toastLabel)
+        UIView.animate(withDuration: 0.2, animations: { self.toastLabel.alpha = 1 }) { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+                UIView.animate(withDuration: 0.25) { self.toastLabel.alpha = 0 }
+            }
+        }
     }
 }

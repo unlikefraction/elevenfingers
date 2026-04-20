@@ -59,8 +59,8 @@ final class WaveformView: UIView {
 
         let midY = rect.midY
         for i in 0..<bars {
-            let level = CGFloat(min(1.0, max(0.02, levels[i] * 8)))
-            let h = max(2, rect.height * level)
+            let level = CGFloat(min(1.0, max(0.04, levels[i])))
+            let h = max(3, rect.height * level * 0.95)
             let x = CGFloat(i) * (barWidth + gap)
             let barRect = CGRect(x: x, y: midY - h / 2, width: barWidth, height: h)
             let path = UIBezierPath(roundedRect: barRect, cornerRadius: min(barWidth / 2, 2))

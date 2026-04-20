@@ -27,6 +27,13 @@ final class PipelineCoordinator: ObservableObject {
         defer { inFlight = false }
 
         append("pipeline start")
+
+        // Finalize any in-flight recording so the m4a is playable
+        if SessionState.read().recording {
+            FlowSessionController.shared.stopRecording()
+            try? await Task.sleep(nanoseconds: 250_000_000)
+        }
+
         let dictionary = DictionaryStore.shared.get()
         let languageCode = AppGroup.userDefaults.string(forKey: DefaultsKeys.languageCode) ?? "eng"
 

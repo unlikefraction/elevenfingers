@@ -31,7 +31,6 @@
 		AFD99E9ED187C058F49E0694 /* ElevenFingersKeyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EDCDCC2F2A2B32FC8356761E /* ElevenFingersKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B7299DBECAC9FC9B3B2F9199 /* FooterBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CDCD01E3C725BC40957E0B /* FooterBarView.swift */; };
 		D7FF7E9A1BD7D790AB58063B /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4547557DB9D7D745136423 /* AppGroup.swift */; };
-		DD09127B6FDF9E003EAB48F8 /* LevelMeterTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62094E337CB9FB3D576699C2 /* LevelMeterTap.swift */; };
 		E4DB2E4A4C8FA6604F341B2A /* KeyboardBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE094CD39037C2A606EC112 /* KeyboardBridge.swift */; };
 		F2178B28A7C32AC95EF315A4 /* DictionaryEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C519B8467F56AB04F3BA186 /* DictionaryEditorView.swift */; };
 		F5E2A6FA8C7377E4A5A08E1D /* SpacebarSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB707061E7BA91868F68D /* SpacebarSliderView.swift */; };
@@ -73,7 +72,6 @@
 		53CBAED9C5DCE640DE416C2D /* DictionaryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryStore.swift; sourceTree = "<group>"; };
 		5704B41D68153F8ADA2B05D1 /* ToolStripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolStripView.swift; sourceTree = "<group>"; };
 		5FEFF04067E89DE459DBE87D /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
-		62094E337CB9FB3D576699C2 /* LevelMeterTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelMeterTap.swift; sourceTree = "<group>"; };
 		6DBA8F1F7C792E45C0C9F034 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7252A0719DCE47577334D2B7 /* ElevenFingersApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ElevenFingersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82CED9D34899A0FEB69DACB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 			children = (
 				CDFECBEB4A71471E2F523BB5 /* AudioRecorder.swift */,
 				AE58B5AD4E50BFC8E6231E07 /* FlowSessionController.swift */,
-				62094E337CB9FB3D576699C2 /* LevelMeterTap.swift */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -344,7 +341,6 @@
 				080B9C8E7D638E34960E3BFC /* FlowSessionController.swift in Sources */,
 				E4DB2E4A4C8FA6604F341B2A /* KeyboardBridge.swift in Sources */,
 				A46DA9ECF7C6E95F214979EC /* LevelBuffer.swift in Sources */,
-				DD09127B6FDF9E003EAB48F8 /* LevelMeterTap.swift in Sources */,
 				945AB1FD266CD7E33BF44ECD /* PipelineCoordinator.swift in Sources */,
 				2A01E7E34399D53CCC815070 /* SettingsView.swift in Sources */,
 			);

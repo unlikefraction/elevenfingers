@@ -14,7 +14,6 @@ final class FlowSessionController: ObservableObject {
 
     private let notifier = DarwinNotifier()
     private let recorder = AudioRecorder()
-    private let levelMeter = LevelMeterTap()
     private var expiryTimer: Timer?
     private var statusTimer: Timer?
     private var bgTaskID: UIBackgroundTaskIdentifier = .invalid
@@ -70,7 +69,6 @@ final class FlowSessionController: ObservableObject {
         isActive = true
         expiresAt = expires
 
-        levelMeter.start()
         scheduleExpiry(at: expires)
         startStatusTicker()
         refreshStatusText()
@@ -78,7 +76,6 @@ final class FlowSessionController: ObservableObject {
 
     func stop() {
         recorder.stop()
-        levelMeter.stop()
         expiryTimer?.invalidate()
         statusTimer?.invalidate()
         try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
