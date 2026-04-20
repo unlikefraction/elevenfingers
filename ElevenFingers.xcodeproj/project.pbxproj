@@ -1,0 +1,621 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02505DCA7714E95E6C5004EC /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4547557DB9D7D745136423 /* AppGroup.swift */; };
+		080B9C8E7D638E34960E3BFC /* FlowSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE58B5AD4E50BFC8E6231E07 /* FlowSessionController.swift */; };
+		28EC46FA964F8660227468F7 /* DarwinEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DE18884ED259119844B408 /* DarwinEvents.swift */; };
+		2A01E7E34399D53CCC815070 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2836594430B3AA035DAA5B /* SettingsView.swift */; };
+		2A9489A0E279ECEB5E7C3CF4 /* ElevenFingersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C332060F50F13E15E111A /* ElevenFingersApp.swift */; };
+		2BE73AB9A0573885FE62277F /* BackendClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE52E3D9A0315A9C8591242 /* BackendClient.swift */; };
+		365A06245480D3F237A8CCDC /* DarwinEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DE18884ED259119844B408 /* DarwinEvents.swift */; };
+		3D9D4F45F07D76F1546F1663 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F157E6CC3C9BDDDC4A37107 /* KeyboardViewController.swift */; };
+		49240E09D6E1852F36D2C648 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA8F1F7C792E45C0C9F034 /* ContentView.swift */; };
+		538DFAB77E92A2EF73EF848A /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFECBEB4A71471E2F523BB5 /* AudioRecorder.swift */; };
+		5E5C1EE4F9C9387A9F282B9E /* CanvasHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8AF99D519CCBC75CD5614E /* CanvasHostView.swift */; };
+		715B3F24E7FA77F3C1CDFBEC /* ToolStripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5704B41D68153F8ADA2B05D1 /* ToolStripView.swift */; };
+		733F20D0FECFF3DEB13DBD1D /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EDE622B563809A7BC300A6 /* BottomBarView.swift */; };
+		84275D33DE1CC5F552772DB7 /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEFF04067E89DE459DBE87D /* WaveformView.swift */; };
+		8A699DEBB93079CF60A199BC /* DictionaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBAED9C5DCE640DE416C2D /* DictionaryStore.swift */; };
+		945AB1FD266CD7E33BF44ECD /* PipelineCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E89583855E9215C2594B85 /* PipelineCoordinator.swift */; };
+		9D6EFC06E20F0D87886A6257 /* DictionaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBAED9C5DCE640DE416C2D /* DictionaryStore.swift */; };
+		A15769D4DF3DD17EB5D6ECDA /* DebugLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D415FB90B87A313D8BF74EF /* DebugLogView.swift */; };
+		A46DA9ECF7C6E95F214979EC /* LevelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011463588BC4F935B5E2235E /* LevelBuffer.swift */; };
+		A5F4FCB65E4AD99D8EF680BA /* AppBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F3322232A270E5CB98B28 /* AppBridge.swift */; };
+		A674B4409AEB8A29CB309D30 /* LevelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011463588BC4F935B5E2235E /* LevelBuffer.swift */; };
+		AFD99E9ED187C058F49E0694 /* ElevenFingersKeyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EDCDCC2F2A2B32FC8356761E /* ElevenFingersKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B7299DBECAC9FC9B3B2F9199 /* FooterBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CDCD01E3C725BC40957E0B /* FooterBarView.swift */; };
+		D7FF7E9A1BD7D790AB58063B /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4547557DB9D7D745136423 /* AppGroup.swift */; };
+		DD09127B6FDF9E003EAB48F8 /* LevelMeterTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62094E337CB9FB3D576699C2 /* LevelMeterTap.swift */; };
+		E4DB2E4A4C8FA6604F341B2A /* KeyboardBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE094CD39037C2A606EC112 /* KeyboardBridge.swift */; };
+		F2178B28A7C32AC95EF315A4 /* DictionaryEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C519B8467F56AB04F3BA186 /* DictionaryEditorView.swift */; };
+		F5E2A6FA8C7377E4A5A08E1D /* SpacebarSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952CB707061E7BA91868F68D /* SpacebarSliderView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E74A5613DE31ACB976E2F90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1168E96D76E4B7396C335B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FD1A02295313AF1F0BB2A33;
+			remoteInfo = ElevenFingersKeyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DA20EFEFBA8FB69322E1814B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AFD99E9ED187C058F49E0694 /* ElevenFingersKeyboard.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		011463588BC4F935B5E2235E /* LevelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBuffer.swift; sourceTree = "<group>"; };
+		0E8AF99D519CCBC75CD5614E /* CanvasHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasHostView.swift; sourceTree = "<group>"; };
+		1FE52E3D9A0315A9C8591242 /* BackendClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendClient.swift; sourceTree = "<group>"; };
+		2D415FB90B87A313D8BF74EF /* DebugLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLogView.swift; sourceTree = "<group>"; };
+		302F3322232A270E5CB98B28 /* AppBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBridge.swift; sourceTree = "<group>"; };
+		37EDE622B563809A7BC300A6 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
+		42346268ED214C88EF660E46 /* ElevenFingersApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ElevenFingersApp.entitlements; sourceTree = "<group>"; };
+		4C2836594430B3AA035DAA5B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		53CBAED9C5DCE640DE416C2D /* DictionaryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryStore.swift; sourceTree = "<group>"; };
+		5704B41D68153F8ADA2B05D1 /* ToolStripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolStripView.swift; sourceTree = "<group>"; };
+		5FEFF04067E89DE459DBE87D /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
+		62094E337CB9FB3D576699C2 /* LevelMeterTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelMeterTap.swift; sourceTree = "<group>"; };
+		6DBA8F1F7C792E45C0C9F034 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7252A0719DCE47577334D2B7 /* ElevenFingersApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ElevenFingersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		82CED9D34899A0FEB69DACB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8F157E6CC3C9BDDDC4A37107 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		952CB707061E7BA91868F68D /* SpacebarSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacebarSliderView.swift; sourceTree = "<group>"; };
+		99E89583855E9215C2594B85 /* PipelineCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineCoordinator.swift; sourceTree = "<group>"; };
+		9C519B8467F56AB04F3BA186 /* DictionaryEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryEditorView.swift; sourceTree = "<group>"; };
+		9FE094CD39037C2A606EC112 /* KeyboardBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBridge.swift; sourceTree = "<group>"; };
+		AE58B5AD4E50BFC8E6231E07 /* FlowSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowSessionController.swift; sourceTree = "<group>"; };
+		BDEE084D6933085EA1F79877 /* ElevenFingersKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ElevenFingersKeyboard.entitlements; sourceTree = "<group>"; };
+		C6CDCD01E3C725BC40957E0B /* FooterBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterBarView.swift; sourceTree = "<group>"; };
+		C9DE18884ED259119844B408 /* DarwinEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarwinEvents.swift; sourceTree = "<group>"; };
+		CB9C332060F50F13E15E111A /* ElevenFingersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenFingersApp.swift; sourceTree = "<group>"; };
+		CDFECBEB4A71471E2F523BB5 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		EB4547557DB9D7D745136423 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		EDCDCC2F2A2B32FC8356761E /* ElevenFingersKeyboard.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ElevenFingersKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF6311D6DE7640F627F0E904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1458B251113D73BDED55E036 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				82CED9D34899A0FEB69DACB1 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1EA64CCB843DC2C00D7AACAF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EF6311D6DE7640F627F0E904 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		23D2AC2342790340230C2986 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6DBA8F1F7C792E45C0C9F034 /* ContentView.swift */,
+				CB9C332060F50F13E15E111A /* ElevenFingersApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2DDC9E2ABDF649F855FB2DFA /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				0E8AF99D519CCBC75CD5614E /* CanvasHostView.swift */,
+				5704B41D68153F8ADA2B05D1 /* ToolStripView.swift */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		63CF09BDC7B9F02CA0A9EBBE /* ElevenFingersKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BDEE084D6933085EA1F79877 /* ElevenFingersKeyboard.entitlements */,
+				8F157E6CC3C9BDDDC4A37107 /* KeyboardViewController.swift */,
+				2DDC9E2ABDF649F855FB2DFA /* Canvas */,
+				6D184AC6982B39634E0B4473 /* Controls */,
+				AE4914ACCA02A1B73DC0D6E6 /* IPC */,
+				1EA64CCB843DC2C00D7AACAF /* Resources */,
+				A1C16918F9FD7395FE2B8754 /* Waveform */,
+			);
+			path = ElevenFingersKeyboard;
+			sourceTree = "<group>";
+		};
+		6AA4063CEB9BB643FF795E0C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2D415FB90B87A313D8BF74EF /* DebugLogView.swift */,
+				9C519B8467F56AB04F3BA186 /* DictionaryEditorView.swift */,
+				4C2836594430B3AA035DAA5B /* SettingsView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6D184AC6982B39634E0B4473 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				37EDE622B563809A7BC300A6 /* BottomBarView.swift */,
+				C6CDCD01E3C725BC40957E0B /* FooterBarView.swift */,
+				952CB707061E7BA91868F68D /* SpacebarSliderView.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		6DB649830ED3BD2AADA3E76A /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				CDFECBEB4A71471E2F523BB5 /* AudioRecorder.swift */,
+				AE58B5AD4E50BFC8E6231E07 /* FlowSessionController.swift */,
+				62094E337CB9FB3D576699C2 /* LevelMeterTap.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		773DB53B4D4374A6191D247C /* IPC */ = {
+			isa = PBXGroup;
+			children = (
+				9FE094CD39037C2A606EC112 /* KeyboardBridge.swift */,
+			);
+			path = IPC;
+			sourceTree = "<group>";
+		};
+		889CBFF69E8D010E077FD743 /* ElevenFingersCore */ = {
+			isa = PBXGroup;
+			children = (
+				EB4547557DB9D7D745136423 /* AppGroup.swift */,
+				C9DE18884ED259119844B408 /* DarwinEvents.swift */,
+				53CBAED9C5DCE640DE416C2D /* DictionaryStore.swift */,
+				011463588BC4F935B5E2235E /* LevelBuffer.swift */,
+			);
+			path = ElevenFingersCore;
+			sourceTree = "<group>";
+		};
+		94456C44066B7AAB704BF53D = {
+			isa = PBXGroup;
+			children = (
+				B0FD71B2CA0C0FBA50E8DB8B /* ElevenFingersApp */,
+				889CBFF69E8D010E077FD743 /* ElevenFingersCore */,
+				63CF09BDC7B9F02CA0A9EBBE /* ElevenFingersKeyboard */,
+				D906C82425BDA2E10E32AD96 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1C16918F9FD7395FE2B8754 /* Waveform */ = {
+			isa = PBXGroup;
+			children = (
+				5FEFF04067E89DE459DBE87D /* WaveformView.swift */,
+			);
+			path = Waveform;
+			sourceTree = "<group>";
+		};
+		AE4914ACCA02A1B73DC0D6E6 /* IPC */ = {
+			isa = PBXGroup;
+			children = (
+				302F3322232A270E5CB98B28 /* AppBridge.swift */,
+			);
+			path = IPC;
+			sourceTree = "<group>";
+		};
+		B0FD71B2CA0C0FBA50E8DB8B /* ElevenFingersApp */ = {
+			isa = PBXGroup;
+			children = (
+				42346268ED214C88EF660E46 /* ElevenFingersApp.entitlements */,
+				23D2AC2342790340230C2986 /* App */,
+				6DB649830ED3BD2AADA3E76A /* Audio */,
+				773DB53B4D4374A6191D247C /* IPC */,
+				C6400F4630286BF17DD5AABA /* Network */,
+				1458B251113D73BDED55E036 /* Resources */,
+				6AA4063CEB9BB643FF795E0C /* UI */,
+			);
+			path = ElevenFingersApp;
+			sourceTree = "<group>";
+		};
+		C6400F4630286BF17DD5AABA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1FE52E3D9A0315A9C8591242 /* BackendClient.swift */,
+				99E89583855E9215C2594B85 /* PipelineCoordinator.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D906C82425BDA2E10E32AD96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7252A0719DCE47577334D2B7 /* ElevenFingersApp.app */,
+				EDCDCC2F2A2B32FC8356761E /* ElevenFingersKeyboard.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22F5F53270AC78ABEAAE3D8F /* ElevenFingersApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87DCA64EB94E3C296AF65E04 /* Build configuration list for PBXNativeTarget "ElevenFingersApp" */;
+			buildPhases = (
+				953BB523FE887723DA90448F /* Sources */,
+				DA20EFEFBA8FB69322E1814B /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				582593F4F04D2043207CEC6A /* PBXTargetDependency */,
+			);
+			name = ElevenFingersApp;
+			packageProductDependencies = (
+			);
+			productName = ElevenFingersApp;
+			productReference = 7252A0719DCE47577334D2B7 /* ElevenFingersApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3FD1A02295313AF1F0BB2A33 /* ElevenFingersKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D92EABA8927E6F927CC6B38E /* Build configuration list for PBXNativeTarget "ElevenFingersKeyboard" */;
+			buildPhases = (
+				FDDEB7C9C5E262BB353965F8 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ElevenFingersKeyboard;
+			packageProductDependencies = (
+			);
+			productName = ElevenFingersKeyboard;
+			productReference = EDCDCC2F2A2B32FC8356761E /* ElevenFingersKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C1168E96D76E4B7396C335B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					22F5F53270AC78ABEAAE3D8F = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					3FD1A02295313AF1F0BB2A33 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4D49422295DE733F55427A69 /* Build configuration list for PBXProject "ElevenFingers" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 94456C44066B7AAB704BF53D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D906C82425BDA2E10E32AD96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22F5F53270AC78ABEAAE3D8F /* ElevenFingersApp */,
+				3FD1A02295313AF1F0BB2A33 /* ElevenFingersKeyboard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		953BB523FE887723DA90448F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7FF7E9A1BD7D790AB58063B /* AppGroup.swift in Sources */,
+				538DFAB77E92A2EF73EF848A /* AudioRecorder.swift in Sources */,
+				2BE73AB9A0573885FE62277F /* BackendClient.swift in Sources */,
+				49240E09D6E1852F36D2C648 /* ContentView.swift in Sources */,
+				365A06245480D3F237A8CCDC /* DarwinEvents.swift in Sources */,
+				A15769D4DF3DD17EB5D6ECDA /* DebugLogView.swift in Sources */,
+				F2178B28A7C32AC95EF315A4 /* DictionaryEditorView.swift in Sources */,
+				8A699DEBB93079CF60A199BC /* DictionaryStore.swift in Sources */,
+				2A9489A0E279ECEB5E7C3CF4 /* ElevenFingersApp.swift in Sources */,
+				080B9C8E7D638E34960E3BFC /* FlowSessionController.swift in Sources */,
+				E4DB2E4A4C8FA6604F341B2A /* KeyboardBridge.swift in Sources */,
+				A46DA9ECF7C6E95F214979EC /* LevelBuffer.swift in Sources */,
+				DD09127B6FDF9E003EAB48F8 /* LevelMeterTap.swift in Sources */,
+				945AB1FD266CD7E33BF44ECD /* PipelineCoordinator.swift in Sources */,
+				2A01E7E34399D53CCC815070 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDDEB7C9C5E262BB353965F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5F4FCB65E4AD99D8EF680BA /* AppBridge.swift in Sources */,
+				02505DCA7714E95E6C5004EC /* AppGroup.swift in Sources */,
+				733F20D0FECFF3DEB13DBD1D /* BottomBarView.swift in Sources */,
+				5E5C1EE4F9C9387A9F282B9E /* CanvasHostView.swift in Sources */,
+				28EC46FA964F8660227468F7 /* DarwinEvents.swift in Sources */,
+				9D6EFC06E20F0D87886A6257 /* DictionaryStore.swift in Sources */,
+				B7299DBECAC9FC9B3B2F9199 /* FooterBarView.swift in Sources */,
+				3D9D4F45F07D76F1546F1663 /* KeyboardViewController.swift in Sources */,
+				A674B4409AEB8A29CB309D30 /* LevelBuffer.swift in Sources */,
+				F5E2A6FA8C7377E4A5A08E1D /* SpacebarSliderView.swift in Sources */,
+				715B3F24E7FA77F3C1CDFBEC /* ToolStripView.swift in Sources */,
+				84275D33DE1CC5F552772DB7 /* WaveformView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		582593F4F04D2043207CEC6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FD1A02295313AF1F0BB2A33 /* ElevenFingersKeyboard */;
+			targetProxy = 0E74A5613DE31ACB976E2F90 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0B8BE28C2D9A9158FC532B87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ElevenFingersApp/ElevenFingersApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = ElevenFingersApp/Resources/Info.plist;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.elevenfingers.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2759D720E0BB793DCC326B2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ElevenFingersKeyboard/ElevenFingersKeyboard.entitlements;
+				INFOPLIST_FILE = ElevenFingersKeyboard/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.elevenfingers.app.keyboard;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A62EFF3E3F8D161CE95EA9C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ElevenFingersApp/ElevenFingersApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = ElevenFingersApp/Resources/Info.plist;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.elevenfingers.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DF7BEDABBCE3986EFF210369 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		E4B1E57ACA0F7A8C9D181AE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ElevenFingersKeyboard/ElevenFingersKeyboard.entitlements;
+				INFOPLIST_FILE = ElevenFingersKeyboard/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.elevenfingers.app.keyboard;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FA7040F6BBF6DB0F5E40E21B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D49422295DE733F55427A69 /* Build configuration list for PBXProject "ElevenFingers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA7040F6BBF6DB0F5E40E21B /* Debug */,
+				DF7BEDABBCE3986EFF210369 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		87DCA64EB94E3C296AF65E04 /* Build configuration list for PBXNativeTarget "ElevenFingersApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B8BE28C2D9A9158FC532B87 /* Debug */,
+				A62EFF3E3F8D161CE95EA9C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D92EABA8927E6F927CC6B38E /* Build configuration list for PBXNativeTarget "ElevenFingersKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2759D720E0BB793DCC326B2D /* Debug */,
+				E4B1E57ACA0F7A8C9D181AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C1168E96D76E4B7396C335B0 /* Project object */;
+}
