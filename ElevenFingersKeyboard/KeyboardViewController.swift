@@ -127,6 +127,8 @@ final class KeyboardViewController: UIInputViewController {
         topRowHeight = topRow.heightAnchor.constraint(equalToConstant: 36)
         bottomBarHeight = bottomBar.heightAnchor.constraint(equalToConstant: 38)
         footerBarHeight = footerBar.heightAnchor.constraint(equalToConstant: 30)
+        let canvasMin = canvasContainer.heightAnchor.constraint(greaterThanOrEqualToConstant: 90)
+        canvasMin.priority = .required
 
         NSLayoutConstraint.activate([
             stack.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -137,6 +139,7 @@ final class KeyboardViewController: UIInputViewController {
             topRowHeight,
             bottomBarHeight,
             footerBarHeight,
+            canvasMin,
         ])
 
         toastLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -160,18 +163,27 @@ final class KeyboardViewController: UIInputViewController {
     private func adaptForContainerSize() {
         let h = view.bounds.height
         guard h > 0 else { return }
-        // Scale chrome based on available height. Floating kb is ~320 tall; docked is larger.
-        if h < 260 {
+        // Scale chrome based on available height, and drop the footer entirely when
+        // the floating keyboard is squished.
+        if h < 200 {
+            topRowHeight.constant = 28
+            bottomBarHeight.constant = 32
+            footerBar.isHidden = true
+            footerBarHeight.constant = 0
+        } else if h < 260 {
             topRowHeight.constant = 30
             bottomBarHeight.constant = 34
+            footerBar.isHidden = false
             footerBarHeight.constant = 26
         } else if h < 340 {
             topRowHeight.constant = 34
             bottomBarHeight.constant = 36
+            footerBar.isHidden = false
             footerBarHeight.constant = 28
         } else {
             topRowHeight.constant = 40
             bottomBarHeight.constant = 42
+            footerBar.isHidden = false
             footerBarHeight.constant = 32
         }
     }
@@ -219,11 +231,15 @@ final class KeyboardViewController: UIInputViewController {
     private func toggleRecord() {
         let state = SessionState.read()
         if !state.active {
-            bridge.post(.sessionStart)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
-                self?.bridge.post(.recordingStart)
-                self?.bottomBar.setRecording(true)
+            // Session is cold — the main app must be launched to arm the mic.
+            showToast("Tap to wake ElevenFingers…")
+            if let url = URL(string: "elevenfingers://wake?pending=record") {
+                extensionContext?.open(url, completionHandler: nil)
             }
+            bridge.post(.sessionStart)
+            bridge.post(.recordingStart)
+            bottomBar.setRecording(true)
+            awaitRecordingConfirmation()
             return
         }
         if state.recording {
@@ -232,6 +248,18 @@ final class KeyboardViewController: UIInputViewController {
         } else {
             bridge.post(.recordingStart)
             bottomBar.setRecording(true)
+            awaitRecordingConfirmation()
+        }
+    }
+
+    private func awaitRecordingConfirmation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { [weak self] in
+            guard let self else { return }
+            let state = SessionState.read()
+            if !state.recording {
+                self.bottomBar.setRecording(false)
+                self.showToast("Couldn't start mic — open the app once")
+            }
         }
     }
 

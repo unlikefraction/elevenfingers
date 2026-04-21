@@ -4,8 +4,8 @@ struct SettingsView: View {
     @State private var backendURL: String = AppGroup.userDefaults.string(forKey: DefaultsKeys.backendURL) ?? BackendConfig.defaultURL
     @State private var languageCode: String = AppGroup.userDefaults.string(forKey: DefaultsKeys.languageCode) ?? "eng"
     @State private var sessionDuration: SessionDurationOption = {
-        let raw = AppGroup.userDefaults.string(forKey: DefaultsKeys.sessionDuration) ?? SessionDurationOption.fifteenMinutes.rawValue
-        return SessionDurationOption(rawValue: raw) ?? .fifteenMinutes
+        let raw = AppGroup.userDefaults.string(forKey: DefaultsKeys.sessionDuration) ?? SessionDurationOption.untilStopped.rawValue
+        return SessionDurationOption(rawValue: raw) ?? .untilStopped
     }()
     @State private var healthMessage: String = ""
 

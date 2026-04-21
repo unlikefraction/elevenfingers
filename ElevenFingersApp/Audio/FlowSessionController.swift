@@ -97,8 +97,14 @@ final class FlowSessionController: ObservableObject {
         refreshStatusText()
     }
 
+    func ensureActive() {
+        if isActive { return }
+        start()
+    }
+
     func startRecording() {
-        guard isActive else { start(); return }
+        if !isActive { start() }
+        guard isActive else { return }
         recorder.start()
         recording = true
         updateSessionRecording(true)
@@ -148,8 +154,8 @@ final class FlowSessionController: ObservableObject {
     }
 
     private func currentDurationSeconds() -> TimeInterval? {
-        let raw = AppGroup.userDefaults.string(forKey: DefaultsKeys.sessionDuration) ?? SessionDurationOption.fifteenMinutes.rawValue
-        let option = SessionDurationOption(rawValue: raw) ?? .fifteenMinutes
+        let raw = AppGroup.userDefaults.string(forKey: DefaultsKeys.sessionDuration) ?? SessionDurationOption.untilStopped.rawValue
+        let option = SessionDurationOption(rawValue: raw) ?? .untilStopped
         return option.seconds
     }
 

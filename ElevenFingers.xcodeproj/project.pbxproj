@@ -73,7 +73,7 @@
 		5704B41D68153F8ADA2B05D1 /* ToolStripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolStripView.swift; sourceTree = "<group>"; };
 		5FEFF04067E89DE459DBE87D /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
 		6DBA8F1F7C792E45C0C9F034 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		7252A0719DCE47577334D2B7 /* ElevenFingersApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ElevenFingersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7252A0719DCE47577334D2B7 /* ElevenFingersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElevenFingersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82CED9D34899A0FEB69DACB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8F157E6CC3C9BDDDC4A37107 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		952CB707061E7BA91868F68D /* SpacebarSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacebarSliderView.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		CB9C332060F50F13E15E111A /* ElevenFingersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenFingersApp.swift; sourceTree = "<group>"; };
 		CDFECBEB4A71471E2F523BB5 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		EB4547557DB9D7D745136423 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
-		EDCDCC2F2A2B32FC8356761E /* ElevenFingersKeyboard.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ElevenFingersKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDCDCC2F2A2B32FC8356761E /* ElevenFingersKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ElevenFingersKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6311D6DE7640F627F0E904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -295,11 +295,9 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					22F5F53270AC78ABEAAE3D8F = {
-						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 					3FD1A02295313AF1F0BB2A33 = {
-						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -382,6 +380,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ElevenFingersApp/ElevenFingersApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = LTBSK59BJ2;
 				INFOPLIST_FILE = ElevenFingersApp/Resources/Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
@@ -402,6 +401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ElevenFingersKeyboard/ElevenFingersKeyboard.entitlements;
+				DEVELOPMENT_TEAM = LTBSK59BJ2;
 				INFOPLIST_FILE = ElevenFingersKeyboard/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -421,6 +421,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ElevenFingersApp/ElevenFingersApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = LTBSK59BJ2;
 				INFOPLIST_FILE = ElevenFingersApp/Resources/Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
@@ -501,6 +502,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ElevenFingersKeyboard/ElevenFingersKeyboard.entitlements;
+				DEVELOPMENT_TEAM = LTBSK59BJ2;
 				INFOPLIST_FILE = ElevenFingersKeyboard/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
